@@ -1,3 +1,4 @@
+[Basic data manipulations.txt](https://github.com/Mahesh-Swami/Stastical-Analysis-Using-R/files/9484452/Basic.data.manipulations.txt)
 [Rplots.pdf](https://github.com/Mahesh-Swami/Stastical-Analysis-Using-R/files/9475461/Rplots.pdf)
 # Stastical-Analysis-Using-R
 ## to load mtcars data to df
