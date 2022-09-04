@@ -1,0 +1,56 @@
+# data.table package
+  #it's a group of facts arranged in lebelled rows and columns
+  #used to record data
+  #reduces computation time compared to data.frame
+# has 3 parts namely DT[i,j.by],, here we instruct R to subset rows using 'i'
+  #to calculate 'j' which are grouped by 'by'
+data("airquality")
+mydata<- airquality
+head(airquality,7)
+
+
+
+data("iris")
+myiris<- iris
+install.packages("data.table")
+library(data.table)
+
+myiris <- data.table(myiris)
+myiris
+
+# subset rows== slect 2nd to 4th rows
+mydata[2:4,]
+
+myiris[Species == 'setosa']
+
+
+# select columns with multiple values
+
+myiris[ Species %in% c('setosa','virginica')]
+
+
+#select columns. Returns vector
+mydata[ , "Temp"]
+
+mydata[ ,.(Temp,Month)]
+
+
+# sum of selected column
+mydata[,sum(Ozone, na.rm = TRUE)]
+head(mydata)
+mydata[,.sum(Ozone, na.rm = TRUE)]
+
+# grouping by variable
+myiris[,.(sepalsum = sum(Sepal.Length)),by = Species]
+
+
+
+#select a column for computation, hence need to set key on column
+
+setkey(myiris, Species)
+
+# selects all rows associated with this datapoint
+
+myiris['setosa']
+
+myiris[c('setosa','virginica')]
